@@ -147,18 +147,17 @@ export async function handleVerifiedRequest(
           response,
           404,
           setupResponseData({
-            message: `no response defiend for method ${request.method}`,
+            message: `no response defined for method ${request.method}`,
           })
         );
       }
     }
   } catch (error) {
-    // console.error(error);
+    console.error(error);
 
     switch (request.method) {
       case "GET": {
         if (error instanceof HTTPError) {
-          console.error(error);
           return send(
             response,
             404,
@@ -182,7 +181,6 @@ export async function handleVerifiedRequest(
           500,
           setupResponseData({ message: "internal server error" })
         );
-        break;
       }
     }
   }

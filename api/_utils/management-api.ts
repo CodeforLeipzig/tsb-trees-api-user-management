@@ -94,6 +94,7 @@ export async function getUserById(userId: string): Promise<User[]> {
     const reqUrl = `${url}/users/${encodeURIComponent(
       userId
     )}?${"fields=user_id,email,email_verified,name,nickname,username&include_fields=true"}`;
+    console.log("userById request", reqUrl)
     const { body } = await got(reqUrl, {
       headers: headers,
       responseType: "json",
