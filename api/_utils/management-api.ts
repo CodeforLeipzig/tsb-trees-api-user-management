@@ -99,6 +99,9 @@ export async function getUserById(userId: string): Promise<User[]> {
       headers: headers,
       responseType: "json",
     });
+    if (!body.username) {
+      body.username = body.nickname || body.email;
+    }
 
     return body as User[];
   } catch (error) {
