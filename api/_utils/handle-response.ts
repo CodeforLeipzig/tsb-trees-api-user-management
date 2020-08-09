@@ -158,6 +158,7 @@ export async function handleVerifiedRequest(
     switch (request.method) {
       case "GET": {
         if (error instanceof HTTPError) {
+          console.error(error);
           return send(
             response,
             404,
