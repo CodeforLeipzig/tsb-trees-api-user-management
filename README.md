@@ -6,6 +6,9 @@ vercel/now + auth0 management api for giessdenkiez.de To be able to manage user 
 
 ## Endpoints
 
+* index
+* https://leipzig-trees-api-user-management.vercel.app/api/user?userid=auth0%7C<userId>
+
 ## Development
 
 ## Tests
